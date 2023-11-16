@@ -72,3 +72,4 @@ updateSong();
 play.addEventListener("click", playsong);
 previous.addEventListener('click', previousSong);
 next.addEventListener('click', nextSong);
+

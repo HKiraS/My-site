@@ -22,12 +22,12 @@
 :root {
     --color1: #2e1e45;
     --color2: #959595;
-    --color3: #004661;
+    --color3: #003751;
     --cinzaClaro: #b6b6b6;
     --color5: #005471;
     --color6: #003751;
     --cor_de_fundo: #002941;
-    --color8: #747474;
+    --color8: #004661;
     --color9: #b5b5b5;
 }
 
@@ -45,6 +45,10 @@ header{
     font-family: "Poppins";
     color: white;
     padding: 10px;
+}
+
+#Music-container {
+    display: none;
 }
 
 #Music-container p {
@@ -93,7 +97,7 @@ header{
 }
 
 #menu .Search-bar {
-    background-color: var(--color8);
+    background-color: var(--color3);
     border: none;
     box-shadow: rgba(100, 100, 111, 0.445) 0px 7px 29px 0px;
     height: 2rem;
@@ -105,7 +109,7 @@ header{
 }
 
 #menu .Search-bar:hover {
-    background-color: rgb(163, 163, 163);
+    background-color: var(--cor_de_fundo);
     transition: .2s;
 }
 
@@ -115,11 +119,11 @@ header{
     transition: .5s;
 }
 
-#menu .Search-bar::before::-webkit-input-placeholde{
+#menu .Search-bar::before::-webkit-input-placeholder{
     content: "#f6ba";
 }
 
-#menu .Search-bar:hover::-webkit-input-placeholder{
+#menu .Search-bar:hover::-webkit-input-placeholder, #menu .Search-bar:focus-visible::-webkit-input-placeholder{
     color: white;
     transition: .4s;
     padding: 7.5px;
@@ -127,15 +131,119 @@ header{
 
 #menu .Search-bar:focus-visible {
     outline: none;
+    background-color: var(--color3);
+    transition: .5s;
+    color: white;
+}
+
+main {
+    background-color: var(--color5);
+    max-width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.recommend {
+    display: flex;
+    width: 80%;
+    height: 250px;
+    margin: auto;
+    border: 2px solid var(--cor_de_fundo);
+    border-radius: 15px;
+    margin: 5px auto 10px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-conteudo {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+
+.recommend > button {
     background-color: var(--color8);
-    transition: .5s;
-    color: white;
+    margin: 10px;
+    width: 30px;
+    height: 50%;
+    font-size: larger;
+    border-radius: 15px;
+
+    border: none; 
+    cursor:  pointer;
+    transition: .2s;
 }
 
-#menu .Search-bar:focus-visible::-webkit-input-placeholder {
-    padding: 7.5px;
+.recommend > button:hover {
+    background-color: var(--color9);
+    color: var(--color1);
+    transition: .2s;
+}
+
+.recommend-item {
+    width: 120px;
+
+    margin: 0 5px;
+    font-size: .8rem;
+    border-radius: 15px;
+    transition: .2s;
+    overflow: hidden;
+    position: inherit;
+}
+
+.recommend-item img {
+    width: 100px;
+    margin: 10px;
+
+}
+
+.recommend-item:hover {
+    border: 1px solid black;
+    transition: .2s;
+    transform: scale(1.05);
+}
+
+.recommend-item a {
     color: white;
-    transition: .5s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recommend-item a p {
+    transform: translateY(-5px);
+
 }
 
 
+.recommend .button-left {
+    position: absolute;
+    height: 90%;
+    top: 0;
+    left: 0;
+}
+
+.recommend  .button-right {
+    position: absolute;
+    height: 90%;
+    right: 0px;
+    top: 0;
+}
+
+.recommend .chapter {
+    position: absolute;
+    background-color: var(--color1);
+    font-size: .75rem;
+    width: 1.5rem;
+    height: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+    right: 5px;
+    top: 10px;
+    padding: 2.5px;
+}
