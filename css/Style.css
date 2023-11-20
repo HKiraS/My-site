@@ -146,65 +146,58 @@ main {
 
 .recommend {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
-    height: 250px;
     margin: auto;
+
     border: 2px solid var(--cor_de_fundo);
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 5px auto 10px;
     padding: 5px;
     position: relative;
-    overflow: hidden;
 }
 
 .container-conteudo {
     display: flex;
-    width: 90%;
-    margin: auto;
+    width: 80%;
+    margin:  10px auto 0;
     position: relative;
+    overflow: auto;
 }
 
 
-.recommend > button {
-    background-color: var(--color8);
-    margin: 10px;
-    width: 30px;
-    height: 50%;
-    font-size: larger;
+
+.container-conteudo::-webkit-scrollbar {
+    background-color: #004661;
     border-radius: 15px;
-
-    border: none; 
-    cursor:  pointer;
-    transition: .2s;
+    height: 10px;
 }
 
-.recommend > button:hover {
-    background-color: var(--color9);
-    color: var(--color1);
-    transition: .2s;
+.container-conteudo::-webkit-scrollbar-thumb {
+    background-color: #2e1e45;
+    border-radius: 15px;
 }
 
 .recommend-item {
     width: 120px;
-
-    margin: 0 5px;
+    margin: 0 5px 5px;
+    height: 200px;
+    padding: 10px ;
     font-size: .8rem;
-    border-radius: 15px;
     transition: .2s;
-    overflow: hidden;
     position: inherit;
-}
-
-.recommend-item img {
-    width: 100px;
-    margin: 10px;
-
+    background-color: #003751;
 }
 
 .recommend-item:hover {
     border: 1px solid black;
     transition: .2s;
-    transform: scale(1.05);
+}
+
+.recommend-item img {
+    width: 90px;
+    object-fit: cover;
 }
 
 .recommend-item a {
@@ -215,24 +208,16 @@ main {
     align-items: center;
 }
 
+.recommend-item > a > div > p:nth-child(2) {
+    color: var(--cinzaClaro);
+    font-size: .7rem;
+}
+
+
 .recommend-item a p {
-    transform: translateY(-5px);
+    transform: translateY(5px);
+    font-size: .8rem;
 
-}
-
-
-.recommend .button-left {
-    position: absolute;
-    height: 90%;
-    top: 0;
-    left: 0;
-}
-
-.recommend  .button-right {
-    position: absolute;
-    height: 90%;
-    right: 0px;
-    top: 0;
 }
 
 .recommend .chapter {
@@ -244,6 +229,6 @@ main {
     text-align: center;
     border-radius: 5px;
     right: 5px;
-    top: 10px;
+    top: 0px;
     padding: 2.5px;
 }

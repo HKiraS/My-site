@@ -1,0 +1,26 @@
+.container {
+  width: 300px; /* largura da div */
+  height: 2rem;
+  margin: 20px auto; /* margem para centralizar na página */
+  border: 1px solid #ccc;
+  overflow: hidden; /* oculta o texto que ultrapassa os limites */
+  position: relative;
+}
+
+.texto-longo {
+  white-space: nowrap; /* impede a quebra de linha */
+  position: absolute;
+}
+
+.texto-longo.animar {
+  animation: animarTexto 10s linear infinite; /* animação de rolagem */
+}
+
+@keyframes animarTexto {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
